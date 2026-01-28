@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@337&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@theme {
+  --color-darkslate-50: #f7f7f7;
+  --color-darkslate-100: #e3e3e3;
+  --color-darkslate-200: #c9c9c9;
+  --color-darkslate-300: #6b6b6b;
+  --color-darkslate-400: #383838;
+  --color-darkslate-500: #171717;
+  --color-darkslate-600: #141414;
+  --color-darkslate-700: #111111;
+  --color-darkslate-800: #0e0e0e;
+  --color-darkslate-900: #0b0b0b;
+  --color-primary-100: #f9cdd3;
+  --color-primary-200: #f3a3aa;
+  --color-primary-300: #ec7981;
+  --color-primary-400: #e64f59;
+  --color-primary-500: #e63946;
+  --color-primary-600: #cf2f3d;
+  --color-primary-700: #b82534;
+  --color-primary-800: #a01b2b;
+  --color-primary-900: #891321;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+*{
+  font-family: var(--font-roboto);
+  -webkit-font-smoothing: antialiased;  
+}
+
+@layer components {
+  .card {
+    @apply bg-darkslate-500 shadow-md rounded-lg p-6 text-darkslate-200 text-sm 
+      font-light p-6 border border-darkslate-400 hover:border-primary-500 transition-all duration-300 ease-out;
+  }
+}

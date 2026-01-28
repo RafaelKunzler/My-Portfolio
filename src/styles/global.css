@@ -45,6 +45,10 @@
     @apply h-full w-fit text-xl max-h-[50px] shadow-[2px_2px] shadow-primary-500 active:shadow-none active:translate-x-[3px] active:translate-y-[3px] border border-r-2 text-darkslate-50 px-5 py-2 border border-primary-500 hover:text-primary-500 transition-colors duration-100 ease-in-out bg-darkslate-900 cursor-pointer rounded-lg;
   }
 
+  .text-muted {
+    @apply text-darkslate-300 font-light text-xs;
+  }
+
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;

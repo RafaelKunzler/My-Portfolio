@@ -2,15 +2,18 @@
 import { Github } from '@lucide/astro';
 import { Linkedin } from '@lucide/astro';
 import { Laugh } from '@lucide/astro';
+
+import { Image } from 'astro:assets';
+import avatar from "../assets/avatar.png";
 ---
-<div class="card h-full col-span-3 row-span-2 overflow-hidden justify-start">  
+<div class="card h-full col-span-3 row-span-2 overflow-hidden justify-start ">  
   <div class="flex w-full h-full">
     <div class="flex flex-col w-9/12 justify-between gap-4">
       <div>
         <p class="text-darkslate-300 font-light text-xs">Bem vindo</p>
         <div class="flex flex-col gap-2 mt-1">
           <p class="">
-            Oi, eu sou o <span class="font-bold">Rafael Rodrigues</span>, desenvolvedor front-end. Gosto de criar interfaces
+            Oi, eu sou o <span class="font-black">Rafael Rodrigues</span>, desenvolvedor front-end. Gosto de criar interfaces
             claras, funcionais e bem estruturadas, aplicando boas práticas e atenção aos
             detalhes.
           </p>
@@ -24,8 +27,11 @@ import { Laugh } from '@lucide/astro';
         <a href="https://github.com/RafaelKunzler" target="_blank" class="button"><Github /></a>
         <a href="https://www.linkedin.com/in/rafael-kunzler/" target="_blank" class="button"><Linkedin /></a>
         <Laugh class="button"/>
-        <a href="https://wa.me/5511965662378" class="button">Fale Comigo</a>
+        <a href="https://wa.me/5511965662378" class="button" target="_blank">Fale Comigo</a>
       </div>
+    </div>
+    <div class="w-3/12">
+      <Image src={avatar} alt="Avatar" class="opacity-70 "/>
     </div>
   </div>
 

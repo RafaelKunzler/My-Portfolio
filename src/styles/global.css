@@ -31,21 +31,30 @@
   --font-roboto: 'Roboto', sans-serif;
 }
 
-*{
+* {
   font-family: var(--font-roboto);
-  -webkit-font-smoothing: antialiased;  
+  -webkit-font-smoothing: antialiased;
 }
 
 @layer components {
   .card {
-    @apply bg-darkslate-500 shadow-md rounded-lg p-6 text-darkslate-200 text-sm 
-      font-light p-6 border border-darkslate-400 hover:border-primary-500 transition-all duration-300 ease-out;
+    @apply bg-darkslate-500 shadow-md rounded-lg p-6 text-darkslate-200 font-light p-6 border border-darkslate-400 hover:border-primary-500 transition-all duration-300 ease-out;
   }
+
   .button {
-    @apply h-full w-fit text-xl max-h-[50px] shadow-[2px_2px] shadow-primary-500 
-    active:shadow-none active:translate-x-[3px] active:translate-y-[3px] 
-    border border-r-2
-    text-darkslate-50 px-5 py-2 border border-primary-500 hover:text-primary-500 
-    transition-colors duration-100 ease-in-out bg-darkslate-900 cursor-pointer rounded-lg ;
+    @apply h-full w-fit text-xl max-h-[50px] shadow-[2px_2px] shadow-primary-500 active:shadow-none active:translate-x-[3px] active:translate-y-[3px] border border-r-2 text-darkslate-50 px-5 py-2 border border-primary-500 hover:text-primary-500 transition-colors duration-100 ease-in-out bg-darkslate-900 cursor-pointer rounded-lg;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }

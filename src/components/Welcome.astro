@@ -6,7 +6,7 @@ import { Laugh } from '@lucide/astro';
 import { Image } from 'astro:assets';
 import avatar from "../assets/avatar.png";
 ---
-<div class="card lg:h-full lg:col-span-3 lg:row-span-2 md:col-span-5 md:row-span-4 overflow-hidden justify-start">  
+<div class="card lg:h-full lg:col-span-3 lg:row-span-2 md:col-span-5 md:row-span-4 lg:overflow-hidden justify-start">  
   <div class="flex w-full h-full">
     <div class="flex flex-col lg:w-9/12 md:justify-between gap-4">
       <div>
@@ -27,11 +27,11 @@ import avatar from "../assets/avatar.png";
         <a href="https://github.com/RafaelKunzler" target="_blank" class="button"><Github /></a>
         <a href="https://www.linkedin.com/in/rafael-kunzler/" target="_blank" class="button"><Linkedin /></a>
         <Laugh class="button"/>
-        <a href="https://wa.me/5511965662378" class="button" target="_blank">Fale Comigo</a>
+        <a href="https://wa.me/5511965662378" class="button font-black" target="_blank">Fale Comigo</a>
       </div>
     </div>
-    <div class="hidden lg:flex lg:w-3/12">
-      <Image src={avatar} alt="Avatar" class="opacity-70 "/>
+    <div class="hidden xl:flex lg:w-3/12 ">
+      <Image src={avatar} alt="Avatar" class="opacity-70 object-contain self-start"/>
     </div>
   </div>
 

@@ -1,26 +1,88 @@
----
-import '../styles/global.css';
-import { Image } from "astro:assets";
+﻿---
+import "../styles/global.css";
 
-import { Github } from "@lucide/astro";
-import { ScreenShare  } from "@lucide/astro";
-
-import project from "../assets/projects/fit-flavors.png"
-import ProjectCardLeft from '../components/ProjectCardLeft.astro';
-import ProjectCardRight from '../components/ProjectCardRight.astro';
+import ProjectCardLeft from "../components/ProjectCardLeft.astro";
+import ProjectCardRight from "../components/ProjectCardRight.astro";
 ---
 
-
-    <div class="bg-darkslate-900 text-darkslate-200 w-full h-full flex flex-col gap-6 md:py-6 md:px-30">
+<Fragment>
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <div
+        class="bg-darkslate-900 text-darkslate-200 w-full min-h-screen flex flex-col gap-8 md:py-6 md:px-30"
+    >
         <a href="/">Voltar</a>
         <div>
             <h1 class="font-extrabold text-4xl text-center mb-12">Projetos</h1>
         </div>
 
-        <ProjectCardLeft 
+        <ProjectCardLeft
+            imagePath="/src/assets/projects/resume-builder.png"
+            title="Resume Builder"
+            descriptionList={[
+                "Aplicação web desenvolvida em Next.js para criação de currículos, utilizando formulários multi-etapas com estado centralizado e visualização em tempo real.",
+                "Permite ajustes imediatos durante o preenchimento e organização clara das informações, e realiza a geração de currículos em PDF para download.",
+            ]}
+            github="https://github.com/RafaelKunzler/Fit-Flavors"
+            website="https://fit-flavors.vercel.app/"
+            usedTools={[
+                "React",
+                "Tailwind",
+                "NextJS",
+                "ShadCN",
+                "react-hook-form",
+                "i18next",
+                "Vercel",
+                "Zod",
+            ]}
+        />
+
+        <ProjectCardRight
+            imagePath="/src/assets/projects/quote-generator.png"
+            title="Random Quote Generator"
+            descriptionList={[
+                "Aplicação web que consome uma API utilizando Axios para realizar requisições assíncronas.",
+                "Gera frases aleatórias a partir da interação do usuário, com atualização dinâmica da interface ao clicar em um botão.",
+            ]}
+            github="https://github.com/RafaelKunzler/Random-Quote-Generator"
+            website="https://random-quote-generator-six-gilt.vercel.app/"
+            usedTools={[
+                "React",
+                "API Rest",
+                "Axios",
+                "CSS"
+            ]}
+        />
+
+        <ProjectCardLeft
+            imagePath="/src/assets/projects/fake-store.png"
+            title="Fake Store"
+            descriptionList={[
+                "Loja web de produtos com autenticação e consumo de API.",
+                "Exibe produtos de forma dinâmica e permitindo filtragem por categorias. Inclui sistema de login e registro de usuários utilizando Firebase Authentication.",
+                "Projeto desenvolvido como estudo prático de integração com Firebase e manipulação de dados dinâmicos no front-end.",
+            ]}
+            github="https://github.com/RafaelKunzler/fake-store"
+            website="https://genuine-rabanadas-6f1982.netlify.app/"
+            usedTools={[
+                "React",
+                "Vite",
+                "Tailwind",
+                "ShadCn",
+                "Router-Dom",
+                "Firebase",
+                "API"
+            ]}
+        />
+
+        <ProjectCardRight
             imagePath="/src/assets/projects/fit-flavors.png"
-            title="Fit Flavors" 
-            description="Plataforma de compartilhamento de receitas utilizando Next.js, Tailwind CSS e MongoDB. O projeto inclui funcionalidades de busca e filtros para receitas veganas e vegetariana."
+            title="Fit Flavors"
+            descriptionList={[
+                "Plataforma web de compartilhamento de receitas com busca e filtros dinâmicos.",
+                "Possui funcionalidades de cadastro e gerenciamento de receitas, permitindo filtragem por tipo. A busca é otimizada com consultas eficientes ao banco de dados, e a interface atualiza os resultados em tempo real, garantindo experiência interativa sem recarregamento de página."
+            ]}
             github="https://github.com/RafaelKunzler/Fit-Flavors"
             website="https://fit-flavors.vercel.app/"
             usedTools={[
@@ -33,25 +95,56 @@ import ProjectCardRight from '../components/ProjectCardRight.astro';
                 "Vercel",
                 "Zod",
             ]}
-
         />
 
-        <ProjectCardRight 
-            imagePath="/src/assets/projects/fit-flavors.png"
-            title="Fit Flavors" 
-            description="Plataforma de compartilhamento de receitas utilizando Next.js, Tailwind CSS e MongoDB. O projeto inclui funcionalidades de busca e filtros para receitas veganas e vegetariana."
-            github="https://github.com/RafaelKunzler/Fit-Flavors"
-            website="https://fit-flavors.vercel.app/"
+        <ProjectCardLeft
+            imagePath="/src/assets/projects/pokenext.png"
+            title="PokeNext"
+            descriptionList={[
+                "O clássico projeto “todo dev já fez”,",
+                "Na prática, não adiciona nada de revolucionário ao portfólio, mas foi feito para estudar os fundamentos do Next.js, consumo de APIs e deploy na Vercel. Um projeto simples, mas cheio de aprendizado por trás do meme."
+            ]}
+            github="https://github.com/RafaelKunzler/PokeNext"
+            website="https://pokenext-pearl-sigma.vercel.app/"
+            usedTools={[
+                "React",
+                "NextJS",
+                "Vercel",
+                "API"
+            ]}
+        />
+
+        <ProjectCardRight
+            imagePath="/src/assets/projects/wheater-app.png"
+            title="Wheater App"
+            descriptionList={[
+                "Projeto do curso The Odin Project para prática de consumo de APIs.",
+                "Permite ao usuário inserir dados que são enviados para uma API. O projeto foca em manipulação assíncrona de dados, renderização dinâmica e gerenciamento de estado no front-end."
+            ]}
+            github="https://github.com/RafaelKunzler/weather-app"
+            website="https://weather-app-kappa-opal-92.vercel.app/"
             usedTools={[
                 "React",
                 "Tailwind",
-                "NextJS",
+                "Vite",
                 "ShadCN",
-                "MongoDB",
-                "NextAuth",
-                "Vercel",
-                "Zod",
+                "Api",                
             ]}
         />
-    </div>
 
+        <ProjectCardLeft
+            imagePath="/src/assets/projects/rock-paper-scissors.png"
+            title="Rock Paper Scissors"
+            descriptionList={[
+                "Meu primeiro projeto, um jogo de pedra papel e tesoura, feito inteiramente com Javascript Vanilla"
+            ]}
+            github="https://github.com/RafaelKunzler/TheOdinProject/tree/main/3.Rock%20Paper%20Scissors"
+            website="https://celebrated-ganache-7495ed.netlify.app/"
+            usedTools={[
+                "Javascript",
+                "CSS",
+            ]}
+        />
+
+    </div>    
+</Fragment>

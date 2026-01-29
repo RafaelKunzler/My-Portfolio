@@ -1,8 +1,57 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import '../styles/global.css';
+import { Image } from "astro:assets";
 
+import { Github } from "@lucide/astro";
+import { ScreenShare  } from "@lucide/astro";
+
+import project from "../assets/projects/fit-flavors.png"
+import ProjectCardLeft from '../components/ProjectCardLeft.astro';
+import ProjectCardRight from '../components/ProjectCardRight.astro';
 ---
-<Layout>
-    <h1>Projects</h1>
 
-</Layout>
+
+    <div class="bg-darkslate-900 text-darkslate-200 w-full h-full flex flex-col gap-6 md:py-6 md:px-30">
+        <a href="/">Voltar</a>
+        <div>
+            <h1 class="font-extrabold text-4xl text-center mb-12">Projetos</h1>
+        </div>
+
+        <ProjectCardLeft 
+            imagePath="/src/assets/projects/fit-flavors.png"
+            title="Fit Flavors" 
+            description="Plataforma de compartilhamento de receitas utilizando Next.js, Tailwind CSS e MongoDB. O projeto inclui funcionalidades de busca e filtros para receitas veganas e vegetariana."
+            github="https://github.com/RafaelKunzler/Fit-Flavors"
+            website="https://fit-flavors.vercel.app/"
+            usedTools={[
+                "React",
+                "Tailwind",
+                "NextJS",
+                "ShadCN",
+                "MongoDB",
+                "NextAuth",
+                "Vercel",
+                "Zod",
+            ]}
+
+        />
+
+        <ProjectCardRight 
+            imagePath="/src/assets/projects/fit-flavors.png"
+            title="Fit Flavors" 
+            description="Plataforma de compartilhamento de receitas utilizando Next.js, Tailwind CSS e MongoDB. O projeto inclui funcionalidades de busca e filtros para receitas veganas e vegetariana."
+            github="https://github.com/RafaelKunzler/Fit-Flavors"
+            website="https://fit-flavors.vercel.app/"
+            usedTools={[
+                "React",
+                "Tailwind",
+                "NextJS",
+                "ShadCN",
+                "MongoDB",
+                "NextAuth",
+                "Vercel",
+                "Zod",
+            ]}
+        />
+    </div>
+

@@ -92,7 +92,7 @@ import avatar from "../assets/avatar.png";
 
 
   button.forEach((btn, index) => {
-    btn.addEventListener('mousedown', () => {
+    btn.addEventListener('pointerdown', () => {
       popover[index].classList.toggle('hidden');
       if (buttonCount < messages.length - 1) {
         buttonCount++;
@@ -100,7 +100,7 @@ import avatar from "../assets/avatar.png";
       
     });
 
-    btn.addEventListener('mouseup', () => {
+    btn.addEventListener('pointerup', () => {
       popover[index].classList.toggle('hidden');
       message.textContent = messages[buttonCount];
     });

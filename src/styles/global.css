@@ -115,7 +115,7 @@
 
 @layer components {
   .card {
-    @apply bg-darkslate-500 shadow-md rounded-lg p-6 sm:min-h-max text-darkslate-200 font-light p-6 border border-darkslate-400 hover:border-primary-500 transition-all duration-300 ease-out;
+    @apply bg-darkslate-500 shadow-md rounded-lg p-6 sm:min-h-max font-light p-6 border border-darkslate-400 hover:border-primary-500 transition-all duration-300 ease-out;
   }
 
   .button {

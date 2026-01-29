@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Roboto';
-  src: url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@337&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-  font-weight: 300 900;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-
 @theme inline {
   --color-darkslate-50: #f7f7f7;
   --color-darkslate-100: #e3e3e3;

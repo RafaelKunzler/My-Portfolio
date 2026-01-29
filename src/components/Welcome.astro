@@ -1,38 +1,108 @@
 ---
-import { Github } from '@lucide/astro';
-import { Linkedin } from '@lucide/astro';
-import { Laugh } from '@lucide/astro';
+import { Github } from "@lucide/astro";
+import { Linkedin } from "@lucide/astro";
+import { Laugh } from "@lucide/astro";
 
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import avatar from "../assets/avatar.png";
 ---
-<div class="card lg:h-full lg:col-span-3 lg:row-span-2 md:col-span-5 md:row-span-4 lg:overflow-hidden justify-start">  
+
+<div class="card lg:h-full lg:col-span-3 lg:row-span-2 md:col-span-5 md:row-span-4 lg:overflow-hidden justify-start">
   <div class="flex w-full h-full">
     <div class="flex flex-col lg:w-9/12 md:justify-between gap-4">
       <div>
         <p class="text-muted">Bem vindo</p>
         <div class="flex flex-col gap-2 mt-1">
           <p class="">
-            Oi, eu sou o <span class="font-black">Rafael Rodrigues</span>, desenvolvedor front-end. Gosto de criar interfaces
-            claras, funcionais e bem estruturadas, aplicando boas práticas e atenção aos
+            Oi, eu sou o <span class="font-black">Rafael Rodrigues</span>,
+            desenvolvedor front-end. Gosto de criar interfaces claras,
+            funcionais e bem estruturadas, aplicando boas práticas e atenção aos
             detalhes.
           </p>
           <p>
-            Fique à vontade para entrar em contato se quiser trocar ideias, colaborar ou
-            conhecer melhor meu trabalho.
+            Fique à vontade para entrar em contato se quiser trocar ideias,
+            colaborar ou conhecer melhor meu trabalho.
           </p>
         </div>
       </div>
       <div class="flex flex-wrap text-center gap-6">
-        <a href="https://github.com/RafaelKunzler" target="_blank" class="button"><Github /></a>
-        <a href="https://www.linkedin.com/in/rafael-kunzler/" target="_blank" class="button"><Linkedin /></a>
-        <Laugh class="button"/>
-        <a href="https://wa.me/5511965662378" class="button font-black" target="_blank">Fale Comigo</a>
+        <a
+          href="https://github.com/RafaelKunzler"
+          target="_blank"
+          class="button"><Github /></a
+        >
+        <a
+          href="https://www.linkedin.com/in/rafael-kunzler/"
+          target="_blank"
+          class="button"><Linkedin /></a
+        >
+
+        <div class="relative inline-block">          
+            <button class="tooglePopover button w-fit">
+              <Laugh />
+            </button>          
+          <div class="popover absolute bottom-full mb-3 left-1/2 -translate-x-1/2 whitespace-nowrap hidden">
+            <p class="message">Sou só um botão 🙂</p>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/5511965662378"
+          class="button font-black"
+          target="_blank">Fale Comigo</a
+        >
       </div>
     </div>
-    <div class="hidden xl:flex lg:w-3/12 ">
-      <Image src={avatar} alt="Avatar" class="opacity-70 object-contain self-start"/>
+    <div class="hidden xl:flex lg:w-3/12">
+      <Image
+        src={avatar}
+        alt="Avatar"
+        class="opacity-70 object-contain self-start"
+      />
     </div>
   </div>
-
 </div>
+
+<script>
+  const button = document.querySelectorAll('button.tooglePopover');
+  const popover = document.querySelectorAll('div.popover');
+  const message = document.querySelector('p.message');
+  let buttonCount = 0;
+  const messages = [
+  "Sou só um botão 🙂",
+  "Não faço nada.",
+  "Ainda aqui?",
+  "Você clicou de novo.",
+  "Sério?",
+  "Isso não vai mudar.",
+  "Eu avisei.",
+  "Persistente, hein.",
+  "Já virou rotina?",
+  "Ok, impressionante.",
+  "Continuo inútil.",
+  "Nada acontece.",
+  "…",
+  "Por quê?",
+  "Agora é pessoal.",
+  "Isso é teimosia.",
+  "Tá ficando estranho.",
+  "Chega, né?",
+  "Último clique. (mentira)",
+  "Parabéns. Nada mudou.",
+];
+
+
+  button.forEach((btn, index) => {
+    btn.addEventListener('mousedown', () => {
+      popover[index].classList.toggle('hidden');
+      if (buttonCount < messages.length - 1) {
+        buttonCount++;
+      }
+      
+    });
+
+    btn.addEventListener('mouseup', () => {
+      popover[index].classList.toggle('hidden');
+      message.textContent = messages[buttonCount];
+    });
+  });
+</script>

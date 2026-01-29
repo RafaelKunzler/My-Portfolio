@@ -119,8 +119,27 @@
   }
 
   .button {
-    @apply h-full w-fit text-xl max-h-[50px] shadow-[2px_2px] shadow-primary-500 active:shadow-none active:translate-x-[3px] active:translate-y-[3px] border border-r-2 text-darkslate-50 px-5 py-2 border border-primary-500 hover:text-primary-500 transition-colors duration-100 ease-in-out bg-darkslate-900 cursor-pointer rounded-lg;
+    @apply h-full w-fit text-xl max-h-[50px] shadow-[2px_2px] shadow-primary-500 active:shadow-none active:translate-x-[3px] active:translate-y-[3px] border border-r-2 text-darkslate-50 px-5 py-2 border border-primary-500 hover:text-primary-500 transition-colors duration-100 ease-in-out bg-darkslate-900 cursor-pointer rounded-lg text-center;
   }
+
+  .popover {
+    @apply relative w-auto px-4 py-2  bg-darkslate-900 border border-primary-500 text-darkslate-50 rounded-lg text-sm whitespace-normal text-center;
+  }
+
+  .popover::after {
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid rgb(var(--primary-500));
+
+  }
+
+  
 
   .text-muted {
     @apply text-darkslate-300 font-light text-xs;

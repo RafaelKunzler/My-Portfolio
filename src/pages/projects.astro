@@ -12,13 +12,20 @@ import ProjectCardRight from "../components/ProjectCardRight.astro";
             href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
         />
+        <script>
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+            }
+        </script>
     </head>
     <div
         class="bg-darkslate-900 text-darkslate-200 w-full min-h-screen flex flex-col gap-8 lg:py-6 xl:px-30 p-4"
     >
-    <div>
-        <a href="/">Voltar</a>
-    </div>
+        <div>
+            <a href="/">Voltar</a>
+        </div>
         <div>
             <h1 class="font-extrabold text-4xl text-center mb-12">Projetos</h1>
         </div>

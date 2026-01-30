@@ -11,7 +11,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/project
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/projects/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<div class="card group mx-28">
+<div class="card group lg:mx-28 ">
   <div class="flex gap-20">    
     <div class="flex flex-col gap-4">
       <h1 class="font-extrabold text-lg">{title}</h1>
@@ -33,7 +33,7 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
         {usedTools && usedTools.map((tool) => <li>{tool}</li>)}
       </ul>
     </div>
-    <Image class="w-5/12 -m-6 opacity-70 rounded-r-lg group-hover:opacity-85" src={images[imagePath]()} alt="Project Image" />
+    <Image class="w-5/12 -m-6 opacity-70 rounded-r-lg group-hover:opacity-85 hidden lg:flex" src={images[imagePath]()} alt="Project Image" />
   </div>
 </div>
 

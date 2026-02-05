@@ -30,6 +30,26 @@ import ProjectCardRight from "../components/ProjectCardRight.astro";
             <h1 class="font-extrabold text-4xl text-center mb-12">Projetos</h1>
         </div>
 
+        <ProjectCardRight
+            imagePath="/src/assets/projects/weather-app-2.png"
+            title="Weather App 2"
+            descriptionList={[
+                "Desenvolvi uma nova versão do Weather App, criada anos atrás. ",
+                "Aplicação front-end utilizando Astro e React Islands, tipagem forte em TypeScript e consumindo uma API externa."
+            ]}
+            github="https://github.com/RafaelKunzler/Weather-App-2"
+            website="https://weather-now-dusky.vercel.app"
+            usedTools={[
+                "React",
+                "Tailwind",
+                "Astro",
+                "Fetch API",
+                "Open-Meteo API",
+                "date-fns",
+                "Typescript",
+            ]}
+        />
+
         <ProjectCardLeft
             imagePath="/src/assets/projects/resume-builder.png"
             title="Resume Builder"

@@ -30,7 +30,7 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
       </div>
 
       <ul class="flex gap-3 text-muted">
-        {usedTools && usedTools.map((tool) => <li>{tool}</li>)}
+        {usedTools && usedTools.map((tool) => <li class="hover:text-primary-500">{tool}</li>)}
       </ul>
     </div>
     <Image class="w-5/12 -m-6 opacity-70 rounded-r-lg group-hover:opacity-85 hidden lg:flex" src={images[imagePath]()} alt="Project Image" />

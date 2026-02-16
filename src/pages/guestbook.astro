@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Guestbook from '../components/Guestbook'
 ---
 
 <Fragment>
@@ -23,6 +24,18 @@ import "../styles/global.css";
     <div>
       <a href="/">Voltar</a>
     </div>
-    <h1 class="font-extrabold text-4xl text-center mb-12">Em construção...</h1>
+    <div>
+      <div>
+        <h1>Em construção...</h1>
+        <h1 class="font-extrabold text-3xl text-center mb-12 pt-16">
+          Livro de recados
+        </h1>
+        <p class="text-center -mt-8 text-muted text-lg">
+          Deixe sua mensagem, compartilhe seus pensamentos ou ideias :D
+        </p>
+      </div>
+      
+      <Guestbook client:load />
+    </div>
   </div>
 </Fragment>

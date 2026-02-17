@@ -1,46 +1,41 @@
-# Astro Starter Kit: Basics
+# 🌐 My Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+My personal portfolio website built with **Astro** to showcase who I am, what I build and how I think about code: fast, clean and with intention. It also features a **guest message board backed by a database**, so visitors can leave notes and feedback directly on the site.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✨ Technologies
 
-## 🚀 Project Structure
+- `Astro`
+- `React`
+- `JavaScript`
+- `Tailwind CSS`
+- `MongoDb`
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Features
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- Clean, minimal portfolio layout with responsive grid design
+- A message board where visitors can leave a note
+- Astro-powered content and fast performance
+- Shows personal projects, links, and social info
+- Lightweight, easy to maintain and iterate on
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📍 The Process
 
-## 🧞 Commands
+I built this portfolio to have a **living presence online**, something that represents both my code and personality. Astro was my tool of choice because it helps with performance and simplicity, especially for static content, while still allowing interactivity where needed.
 
-All commands are run from the root of the project, from a terminal:
+One of the fun parts was connecting the message board to a database so people can leave comments. A subtle way for visitors (and recruiters 👀) to interact with the site. I kept the design clean and minimal so the focus stays on content and ease of use. I’m proud of how it turned out and I’m always making small improvements!
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🚦 Running the Project
 
-## 👀 Want to learn more?
+1. Clone the repository  
+2. Install dependencies: `npm install`  
+3. Run development server: `npm run dev`  
+4. Visit `http://localhost:3000` in your browser
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📍 Preview
+
+ 
+ 
+
+[screen-recorder-tue-feb-17-2026-12-55-15.webm](https://github.com/user-attachments/assets/8ae95f12-21df-46c4-a323-ea1711f8be89)
+
+[My Portfolio](https://my-portfolio-opal-seven-68.vercel.app/guestbook)

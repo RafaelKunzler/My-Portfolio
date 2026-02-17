@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ChevronDown } from 'lucide-react'
 import MessageCard from './MessageCard';
@@ -11,18 +11,35 @@ const Guestbook = () => {
     message: ""
   });
 
-  const [messages, setMessages] = useState([{
-    name: "Ana Clara",
-    date: "Fevereiro 16, 2026",
-    message: "Adorei o site! Dá pra ver o carinho em cada detalhe. Sucesso demais pra você!"
-  },
-  {
-    name: "Lucas Martins",
-    date: "Fevereiro 8, 2026",
-    message: "Que ideia massa esse mural! Já me senti assinando o caderno da escola 😂"
-  }
-  ])
+  const [messages, setMessages] = useState([])
 
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadMessages = async () => {
+      try {
+        const res = await fetch("/api/messages");
+        if (!res.ok) {
+          throw new Error("Failed to load messages");
+        }
+
+        const data = await res.json();
+        if (isMounted) {
+          setMessages(Array.isArray(data) ? data : []);
+        }
+      } catch (error) {
+        if (isMounted) {
+          setMessages([]);
+        }
+      }
+    };
+
+    loadMessages();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
 
   function handleChange(event) {
@@ -34,26 +51,43 @@ const Guestbook = () => {
     }));
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if(!formData.name || !formData.message){
+    if (!formData.name || !formData.message) {
       return
     }
 
-    const newMessage ={
+    const newMessage = {
       name: formData.name,
-      date: "Fevereiro 6, 2026",
+      date: new Date(),
       message: formData.message
     }
-    setMessages(prevMessages => [newMessage, ...prevMessages])
 
-   setFormData({
-    name: "",
-    message: ""
-   })
-    
+    try {
+      const res = await fetch("/api/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newMessage),
+      });
 
+      if (!res.ok) {
+        throw new Error("Falha ao enviar mensagem");
+      }
+
+      const data = await res.json();
+      const savedMessage = data?.message ?? newMessage;
+
+      setMessages(prevMessages => [savedMessage, ...prevMessages]);
+      setFormData({
+        name: "",
+        message: ""
+      });
+    } catch (error) {
+      alert("Oops. We failed.");
+    }
   }
 
 
@@ -74,7 +108,7 @@ const Guestbook = () => {
 
             <div className='flex flex-col gap-1'>
               <label htmlFor="message" className='font-bold'>Mensagem</label>
-              <textarea required className="card py-2" id="name" placeholder="Deixe sua mensagem..." name="message" value={formData.message} onChange={handleChange} />
+              <textarea required className="card py-2" id="message" placeholder="Deixe sua mensagem..." name="message" value={formData.message} onChange={handleChange} />
             </div>
 
             <button className='w-full bg-primary-500 p-2 rounded-2xl font-bold hover:bg-primary-700 hover:cursor-pointer' type='submit'>
@@ -88,9 +122,9 @@ const Guestbook = () => {
       <h1 className='my-6 font-bold text-2xl'>Mensagens({messages.length})</h1>
       <div className='flex flex-col gap-2'>
         {messages.map((msg) => (
-          <MessageCard name={msg.name} date={msg.date} message={msg.message} />
+          <MessageCard key={msg._id ?? `${msg.name}-${msg.date}-${msg.message}`} name={msg.name} date={msg.date} message={msg.message} />
         ))}
-        
+
       </div>
     </div>
   )

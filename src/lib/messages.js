@@ -1,7 +1,7 @@
 import { Messages } from "./mongodb";
 
 export const getAllMessages = async () => {
-  const messages = await (await Messages()).find({}).toArray();
+  const messages = await (await Messages()).find({}).sort({ _id: -1 }).toArray();
   return messages;
 };
 

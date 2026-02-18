@@ -1,4 +1,4 @@
-# 🌐 [My Portfolio](https://my-portfolio-opal-seven-68.vercel.app/guestbook)
+# 🌐 [My Portfolio](https://my-portfolio-opal-seven-68.vercel.app)
 
 My personal portfolio website built with **Astro** to showcase who I am, what I build and how I think about code: fast, clean and with intention. It also features a **guest message board backed by a database**, so visitors can leave notes and feedback directly on the site.
 
@@ -36,5 +36,9 @@ One of the fun parts was connecting the message board to a database so people ca
  
  
 
-[screen-recorder-tue-feb-17-2026-12-55-15.webm](https://github.com/user-attachments/assets/8ae95f12-21df-46c4-a323-ea1711f8be89)
+
+
+
+
+https://github.com/user-attachments/assets/d5609a56-b80e-4b59-ace4-25ee9b6177be
 
